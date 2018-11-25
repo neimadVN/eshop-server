@@ -2,11 +2,15 @@
 
 const parseServerOptions = require('./parse-server');
 
+const serverURL = process.env.PROJECT_DOMAIN ? 
+    'https://' + process.env.PROJECT_DOMAIN + '.glitch.me/api' :
+    'http://localhost:1337/api';
+
 const parseDashboardOption = {
     mountPath: process.env.DASHBOARD_MOUNT || '/dashboard',
     apps: [
         {
-            serverURL: parseServerOptions.serverURL || 'https://'+process.env.PROJECT_DOMAIN+'.glitch.me/api',
+            serverURL: parseServerOptions.serverURL || serverURL,
             appId: parseServerOptions.appId,
             masterKey: parseServerOptions.masterKey,
             javascriptKey: parseServerOptions.javascriptKey,

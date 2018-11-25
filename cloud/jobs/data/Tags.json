@@ -1,0 +1,249 @@
+﻿{
+	"Tags": [
+		{
+			"barcode": "257000001",
+			"name": "VINAMILK",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000002",
+			"name": "SỮA KHÁC",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000003",
+			"name": "ABBOTT",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000004",
+			"name": "FRIESLAND CAMPINA VN",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000005",
+			"name": "ENFAMIL A+",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000006",
+			"name": "NUTIFOOD",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000007",
+			"name": "NESTLE",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000008",
+			"name": "VITADAIRY",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000009",
+			"name": "BỘT ĂN DẶM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000010",
+			"name": "CAFE",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000011",
+			"name": "BOBBY-UNICHARM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000012",
+			"name": "HUGGIES",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000013",
+			"name": "TÃ KHÁC",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000014",
+			"name": "XỊT MUỖI",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000015",
+			"name": "NHANG MUỖI",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000016",
+			"name": "SỮA ĐẶC",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000017",
+			"name": "SỮA TƯƠI TIỆT TRÙNG",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000018",
+			"name": "DẦU ĂN",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000019",
+			"name": "NƯỚC CHẤM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000020",
+			"name": "GIA VỊ",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000021",
+			"name": "BƠ, PHÔ MAI",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000022",
+			"name": "BÁNH",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000023",
+			"name": "GIA DỤNG",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000024",
+			"name": "VĂN PHÒNG PHẨM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000025",
+			"name": "MÌ, NUI, HỦ TIẾU",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000026",
+			"name": "BĂNG VỆ SINH",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000027",
+			"name": "TRÀ",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000028",
+			"name": "ĐỒ HỘP",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000029",
+			"name": "BÁNH, KẸO",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000030",
+			"name": "NGŨ CỐC",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000031",
+			"name": "THỨC ĂN NHANH",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000032",
+			"name": "KHĂN GIẤY",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000033",
+			"name": "THUỐC LÁ",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000034",
+			"name": "YẾN SÀO",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000035",
+			"name": "DẦU GỘI",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000036",
+			"name": "SỮA TẮM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000037",
+			"name": "NƯỚC LAU NHÀ",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000038",
+			"name": "NƯỚC RỬA CHÉN",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000039",
+			"name": "NƯỚC XẢ",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000040",
+			"name": "BỘT GIẶT",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000041",
+			"name": "XÀ PHÒNG",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000042",
+			"name": "KEM ĐÁNH RĂNG",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000043",
+			"name": "MỸ PHẨM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000044",
+			"name": "HÓA PHẨM",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000045",
+			"name": "SỮA CHUA",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000046",
+			"name": "BIA, RƯỢU",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000047",
+			"name": "NƯỚC NGỌT",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000048",
+			"name": "NƯỚC KHOÁNG",
+			"status": "ACTIVE"
+		}, 
+		{
+			"barcode": "257000049",
+			"name": "SỮA BỘT PHA SẴN",
+			"status": "ACTIVE"
+		}
+	]
+}
