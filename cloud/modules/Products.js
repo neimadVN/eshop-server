@@ -69,25 +69,33 @@ ProductsModule.getObjectByContent = function (request) {
 };
 
 ProductsModule.getProductList = function (request) {
-    let offset = !_.isUndefined(request.params.start) ? parseInt(request.params.start) : 0;
-    let limit = !_.isUndefined(request.params.length) ? parseInt(request.params.length) : 10;
-    let sortField = 'createdAt';
-    let direction = 'desc';
-    if (offset) {
-        queryEvent.skip(offset);
+    const productQuery = new Parse.Query('Product');
+    const isNewProduct = request.params.isNewProduct || false;
+    const queryPaging = UTILS.pageCalc(request.params.page, request.params.perPage);
+    if (productQuery) {
+        productQuery.skip(queryPaging.offset);
+        productQuery.limit(queryPaging.limit);
     }
-    if (limit) {
-        queryEvent.limit(limit);
-    }
-    if (direction == 'desc') {
-        queryEvent.descending(sortField);
+    if (isNewProduct) {
+        productQuery.ascending('createdAt');
     } else {
-        queryEvent.ascending(sortField);
+        productQuery.ascending('objectId');
     }
 
-    let promises = [];
-    promises.push(queryCountEvent.count({ useMasterKey: true }));
-    promises.push(queryEvent.find({ useMasterKey: true }));
-}
+    return productQuery.find().then((result) => {
+        return result;
+    });
+    
+};
+
+ProductsModule.getProductDetail = function (request) {
+    const productQuery = new Parse.Query('Product');
+    productQuery.equalTo('objectId', request.params.objectId);
+    productQuery.include('tag');
+
+    return productQuery.find().then((result) => {
+        return result;
+    });
+};
 
 module.exports = ProductsModule;

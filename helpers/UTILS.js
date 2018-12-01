@@ -25,7 +25,7 @@ UTILS.createPointerTo = (ClassName, fieldName, fieldValue) => {
 
 UTILS.pageCalc = (pageNumber, perPage) => {
     if (!pageNumber)
-        return false;
+        return null;
     perPage = perPage || 10;
     const offset = (pageNumber - 1) * perPage;
     return {offset, limit: perPage};
