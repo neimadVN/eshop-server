@@ -9,6 +9,9 @@ Parse.Cloud.define("hello", function(request, response) {
 const Products = require('./modules/Products');
 Parse.Cloud.define('getObjectByContent', Products.getObjectByContent);
 
+// Tags API
+const Tags = require('./modules/Tags');
+
 
 // [JOB] - migrate Data
 const migrateData = require('./jobs/migrateData');
