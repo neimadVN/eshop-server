@@ -5,6 +5,10 @@ Parse.Cloud.define("hello", function(request, response) {
   return "world!";
 });
 
+// Products API
+const Products = require('./modules/Products');
+Parse.Cloud.define('getObjectByContent', Products.getObjectByContent);
+
 
 // [JOB] - migrate Data
 const migrateData = require('./jobs/migrateData');
