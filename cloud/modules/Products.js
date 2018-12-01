@@ -61,11 +61,33 @@ ProductsModule.getObjectByContent = function (request) {
     promises.push(memberQuery.find());
     promises.push(couponQuery.find());
     promises.push(giftQuery.find());
-    
+
     return Promise.all(promises).then((result) => {
         console.log(result);
-        return [...result[0],...result[1],...result[2],...result[3]];
+        return [...result[0], ...result[1], ...result[2], ...result[3]];
     });
 };
+
+ProductsModule.getProductList = function (request) {
+    let offset = !_.isUndefined(request.params.start) ? parseInt(request.params.start) : 0;
+    let limit = !_.isUndefined(request.params.length) ? parseInt(request.params.length) : 10;
+    let sortField = 'createdAt';
+    let direction = 'desc';
+    if (offset) {
+        queryEvent.skip(offset);
+    }
+    if (limit) {
+        queryEvent.limit(limit);
+    }
+    if (direction == 'desc') {
+        queryEvent.descending(sortField);
+    } else {
+        queryEvent.ascending(sortField);
+    }
+
+    let promises = [];
+    promises.push(queryCountEvent.count({ useMasterKey: true }));
+    promises.push(queryEvent.find({ useMasterKey: true }));
+}
 
 module.exports = ProductsModule;

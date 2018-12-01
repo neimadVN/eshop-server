@@ -4,7 +4,7 @@ const UTILS = require('../../helpers/UTILS');
 
 const GiftsModule = {};
 
-GiftsModule.getTagList = function (request) {
+GiftsModule.getGiftList = function (request) {
     const giftQuery = new Parse.Query('Gift');
     giftQuery.ascending('name');
 

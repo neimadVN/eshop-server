@@ -6,6 +6,8 @@ const TagsModule = {};
 
 TagsModule.getTagList = function (request) {
     const tagQuery = new Parse.Query('Tag');
+    const queryPaging = UTILS.pageCalc(request.params.page, request.params.perPage);
+    
     tagQuery.ascending('name');
 
     return tagQuery.find().then((result) => {
