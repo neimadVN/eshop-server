@@ -5,9 +5,7 @@ const UTILS = require('../../helpers/UTILS');
 const ProductsModule = {};
 
 ProductsModule.getObjectByContent = function (request) {
-    console.log(request.params);
     const keyword = new RegExp(request.params.keyword, 'i');
-    console.log(keyword);
     if (!request.params.keyword || !keyword) {
         return null;
     }
@@ -82,6 +80,9 @@ ProductsModule.getProductList = function (request) {
         productQuery.ascending('objectId');
     }
 
+    productQuery.include('tag');
+    productQuery.include('gift');
+
     return productQuery.find().then((result) => {
         return result;
     });
@@ -92,6 +93,7 @@ ProductsModule.getProductDetail = function (request) {
     const productQuery = new Parse.Query('Product');
     productQuery.equalTo('objectId', request.params.objectId);
     productQuery.include('tag');
+    productQuery.include('gift');
 
     return productQuery.find().then((result) => {
         return result;
