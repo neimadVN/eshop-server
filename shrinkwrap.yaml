@@ -1,16 +1,17 @@
 dependencies:
   dotenv: 6.1.0
   lodash: 4.17.11
+  parse: 2.1.0
   parse-dashboard: 1.2.0
   parse-server: 3.1.1
   pm2: 3.2.2
 packages:
-  /@babel/runtime/7.1.2:
+  /@babel/runtime/7.1.5:
     dependencies:
       regenerator-runtime: 0.12.1
     dev: false
     resolution:
-      integrity: sha512-Y3SCjmhSupzFB6wcv1KmmFucH6gDVnI30WjOcicV10ju0cZjak3Jcs67YLIXBrmZYw1xCrVeJPbycFwrqNyxpg==
+      integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
   /@parse/fs-files-adapter/1.0.1:
     dev: false
     resolution:
@@ -2457,7 +2458,7 @@ packages:
       integrity: sha1-VY5TnULZ+4khDggiCdbzsD1frtU=
   /parse/2.1.0:
     dependencies:
-      '@babel/runtime': 7.1.2
+      '@babel/runtime': 7.1.5
       ws: 6.0.0
       xmlhttprequest: 1.8.0
     dev: false
@@ -3831,6 +3832,7 @@ shrinkwrapVersion: 3
 specifiers:
   dotenv: ^6.1.0
   lodash: ^4.17.11
+  parse: ^2.1.0
   parse-dashboard: ^1.2.0
   parse-server: '*'
   pm2: ^3.2.2
