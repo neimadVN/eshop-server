@@ -32,7 +32,7 @@ TagsModule.getTagsList = function (request) {
 
                 promises.push(sampleProductQuery.find().then((sampleList) => {
                     tag = tag.toJSON();
-                    tag['sampleProduct'] = sampleList;
+                    tag['sampleProduct'] = sampleList.map((product) => product.toJSON());
                     result[index] = tag;
                     return Promise.resolve(true);
                 }));
