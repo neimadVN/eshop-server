@@ -14,11 +14,15 @@ Parse.Cloud.define('searchProduct', Products.searchProduct);
 
 // Tags API
 const Tags = require('./modules/Tags');
-Parse.Cloud.define('getTagList', Tags.getTagList);
+Parse.Cloud.define('getTagsList', Tags.getTagsList);
 
 // Gifts API
 const Gifts = require('./modules/Gift');
 Parse.Cloud.define('getGiftList', Gifts.getGiftList);
+
+// Bill API
+const Bills = require('./modules/Bill');
+Parse.Cloud.define('getBills', Bills.getBills);
 
 // [JOB] - migrate Data
 const migrateData = require('./jobs/migrateData');

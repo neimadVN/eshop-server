@@ -23,6 +23,11 @@ UTILS.createPointerTo = (ClassName, fieldName, fieldValue) => {
     });
 };
 
+UTILS.createBlankPointerTo = (ClassName, objectId) => {
+    const ParseObject = Parse.Object.extend(ClassName);
+    return ParseObject.createWithoutData(objectId);
+};
+
 UTILS.pageCalc = (pageNumber, perPage) => {
     if (!pageNumber)
         return null;

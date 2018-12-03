@@ -4,7 +4,7 @@ const UTILS = require('../../helpers/UTILS');
 
 const TagsModule = {};
 
-TagsModule.getTagList = function (request) {
+TagsModule.getTagsList = function (request) {
     const tagQuery = new Parse.Query('Tag');
     const includeSample = request.params.includeSample;
     const queryPaging = UTILS.pageCalc(request.params.page, request.params.perPage);
