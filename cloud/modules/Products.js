@@ -70,7 +70,7 @@ ProductsModule.getProductList = function (request) {
     const productQuery = new Parse.Query('Product');
     const isNewProduct = request.params.isNewProduct || false;
     const queryPaging = UTILS.pageCalc(request.params.page, request.params.perPage);
-    if (productQuery) {
+    if (queryPaging) {
         productQuery.skip(queryPaging.offset);
         productQuery.limit(queryPaging.limit);
     }
@@ -83,6 +83,31 @@ ProductsModule.getProductList = function (request) {
     productQuery.include('tag');
     productQuery.include('gift');
 
+    const tagObjectId = request.params.tagObjectId ? request.params.tagObjectId : undefined;
+    const tagKeyword = request.params.tagKeyword ? request.params.tagKeyword : undefined;
+
+    let subQuery = null;
+    if (tagObjectId) {
+        const tagQueryId = UTILS.buildPointerQuery('Tag', ['name', 'objectId']);
+        tagQueryId.equalTo('objectId', tagObjectId);
+        subQuery = subQuery ? Parse.Query.or(subQuery, tagQueryId) : tagQueryId;
+    }
+
+    if (tagKeyword) {
+        const tagQueryKeywordName = UTILS.buildPointerQuery('Tag', ['name', 'objectId']);
+        tagQueryKeywordName.contains('name',tagKeyword);
+
+        const tagQueryKeywordBarbode = UTILS.buildPointerQuery('Tag', ['name', 'objectId']);
+        tagQueryKeywordBarbode.equalTo('barcode',tagKeyword);
+
+        const tagQueryKeyword = Parse.Query.or(tagQueryKeywordName, tagQueryKeywordBarbode);
+        subQuery = subQuery ? Parse.Query.or(subQuery, tagQueryKeyword) : tagQueryKeyword;
+    }
+
+    if (subQuery) {
+        productQuery.matchesQuery('tag', subQuery);
+    }
+    
     return productQuery.find().then((result) => {
         return result;
     });
@@ -94,6 +119,29 @@ ProductsModule.getProductDetail = function (request) {
     productQuery.equalTo('objectId', request.params.objectId);
     productQuery.include('tag');
     productQuery.include('gift');
+
+    return productQuery.find().then((result) => {
+        return result;
+    });
+};
+
+ProductsModule.searchProduct = function (request) {
+    const keyword = _.toUpper(request.params.keyword);
+    const productQueryName = new Parse.Query('Product');
+    productQueryName.contains('name', keyword);
+    
+    const productQueryBarcode = new Parse.Query('Product');
+    productQueryBarcode.contains('barcode', keyword);
+
+    const productQuery = Parse.Query.or(productQueryName, productQueryBarcode);
+    productQuery.select(['objectId', 'name', 'barcode']);
+    productQuery.equalTo('STATUS', 'active');
+
+    const queryPaging = UTILS.pageCalc(request.params.page, request.params.perPage);
+    if (queryPaging) {
+        productQuery.skip(queryPaging.offset);
+        productQuery.limit(queryPaging.limit);
+    }
 
     return productQuery.find().then((result) => {
         return result;

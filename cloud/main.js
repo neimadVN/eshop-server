@@ -10,6 +10,7 @@ const Products = require('./modules/Products');
 Parse.Cloud.define('getObjectByContent', Products.getObjectByContent);
 Parse.Cloud.define('getProductList', Products.getProductList);
 Parse.Cloud.define('getProductDetail', Products.getProductDetail);
+Parse.Cloud.define('searchProduct', Products.searchProduct);
 
 // Tags API
 const Tags = require('./modules/Tags');

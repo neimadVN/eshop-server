@@ -31,4 +31,14 @@ UTILS.pageCalc = (pageNumber, perPage) => {
     return {offset, limit: perPage};
 };
 
+UTILS.buildPointerQuery = (className = 'Product', selectedField = []) => {
+    const query = new Parse.Query(className);
+
+    if (!_.isEmpty(selectedField)) {
+        query.select(selectedField);
+    }
+    
+    return query;
+};
+
 module.exports = UTILS;
