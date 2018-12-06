@@ -28,7 +28,7 @@ ProductsModule.getObjectByContent = function (request) {
         productBarcode,
         productName
     );
-    productQuery.select(['barcode', 'name']);
+    productQuery.select(['barcode', 'name', 'price']);
     productQuery.limit(10);
 
     const memberQuery = Parse.Query.or(
@@ -61,8 +61,7 @@ ProductsModule.getObjectByContent = function (request) {
     promises.push(giftQuery.find());
 
     return Promise.all(promises).then((result) => {
-        console.log(result);
-        return [...result[0], ...result[1], ...result[2], ...result[3]];
+        return UTILS.parseObjectArray2JSON([...result[0], ...result[1], ...result[2], ...result[3]]);
     });
 };
 
@@ -109,7 +108,7 @@ ProductsModule.getProductList = function (request) {
     }
     
     return productQuery.find().then((result) => {
-        return result;
+        return UTILS.parseObjectArray2JSON(result);
     });
     
 };
@@ -120,8 +119,8 @@ ProductsModule.getProductDetail = function (request) {
     productQuery.include('tag');
     productQuery.include('gift');
 
-    return productQuery.find().then((result) => {
-        return result;
+    return productQuery.first().then((result) => {
+        return result.toJSON();
     });
 };
 
@@ -144,7 +143,7 @@ ProductsModule.searchProduct = function (request) {
     }
 
     return productQuery.find().then((result) => {
-        return result;
+        return UTILS.parseObjectArray2JSON(result);
     });
 };
 

@@ -46,4 +46,10 @@ UTILS.buildPointerQuery = (className = 'Product', selectedField = []) => {
     return query;
 };
 
+UTILS.parseObjectArray2JSON = (parseObjectArray = []) => {
+    return parseObjectArray.map((indexVal) => {
+        return indexVal.toJSON();
+    });
+}
+
 module.exports = UTILS;

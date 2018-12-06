@@ -9,7 +9,7 @@ GiftsModule.getGiftList = function (request) {
     giftQuery.ascending('name');
 
     return giftQuery.find().then((result) => {
-        return result;
+        return UTILS.parseObjectArray2JSON(result);
     });
 };
 

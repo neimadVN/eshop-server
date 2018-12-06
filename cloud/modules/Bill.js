@@ -20,7 +20,7 @@ BillModule.getBills = function (request) {
     }
 
     return billQuery.find().then((result) => {
-        return result;
+        return UTILS.parseObjectArray2JSON(result);
     });
 };
 
@@ -43,7 +43,7 @@ BillModule.getBillDetail = function (request) {
     promises.push(billDetailQuery.find());
 
     return Promise.all(promises).then((result) => {
-        return result;
+        return UTILS.parseObjectArray2JSON(result);;
     });
 };
 
